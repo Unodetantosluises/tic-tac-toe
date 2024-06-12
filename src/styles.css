@@ -4,8 +4,9 @@
 
 body {
   font-family: sans-serif;
-  margin: 20px;
+  margin: 0;
   padding: 0;
+  background-color: #FFF9E2;
 }
 
 h1 {
@@ -52,46 +53,82 @@ ul {
 
 body {
   font-family: sans-serif;
-  margin: 20px;
-  padding: 0;
 }
 
 .Header {
+  width: 100vw;
   display: grid;
   grid-template-areas: "logo nav";
-  background: #7f69a5;
+  background-color: #44916f;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.Logo {
+  grid-area: logo;
+  height: 70px;
 }
 
 .Footer {
   display: grid;
   grid-template-areas: "logo nav";
-  background-color: #7f69a5;
+  background-color: #44916f;
   align-items: end;
   justify-content: flex-end;
 }
 
 .Nav {
-  grid-area: nav;
   display: grid;
-  grid-template-columns: repeat(4, auto);
+  grid-area: nav;
+  grid-template-columns: repeat(3, auto);
   align-items: center;
   justify-items: center;
-  background: #7f69a5;
+}
+
+.Nav a {
+  color: #FFF9E2;
+  font-size: 20px;
+  font-weight: 500;
+  transition: 0.5s;
+  text-decoration: none;
+}
+
+.Nav a:hover {
+  transform: scale(1.1);
+}
+
+.Nav button {
+  padding: 10px;
+  outline: none;
+  border: none;
+  font-size: 20px;
+  color: #fff;
+  font-weight: 600;
+  background-color: rgba(255, 0, 0, 0.25);
+  box-shadow: 0px 5px 0px 0px rgba(255, 0, 0, 0.25);
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 70ms;
+}
+
+.Nav button:active {
+  transform: translateY(3px);
+  box-shadow: 0px 2px 0px rgba(255, 0, 0, 0.25);
 }
 
 .square {
-  background: #fff;
-  border: 1px solid #999;
+  background: #FFF9E2;
+  border: 1px solid #44916f;
   float: left;
-  font-size: 24px;
+  font-size: 70px;
   font-weight: bold;
-  line-height: 34px;
+  line-height: 35px;
   height: 80px;
   margin-right: -1px;
   margin-top: -1px;
+  margin-bottom: 1px;
   padding: 0;
   text-align: center;
-  width: 80px;
+  width: 100px;
 }
 
 .header {
@@ -109,6 +146,7 @@ body {
 
 .status {
   margin-bottom: 10px;
+  margin-top: 10px;
 }
 .game {
   display: flex;
@@ -117,4 +155,63 @@ body {
 
 .game-info {
   margin-left: 20px;
+}
+
+.Burger {
+  display: none;
+  grid-area: burger;
+  margin: 0 20px 0 0;
+  padding: 0;
+  justify-self: end;
+  font-size: 40px;
+  border: none;
+  background: none;
+  outline: none;
+  transition: 0.1s;
+}
+.Burger:active {
+  transform: scale(1.2);
+}
+
+@media (max-width: 700px) {
+  .Header {
+    grid-template-areas: "logo burger" "nav nav";
+  }
+
+  .Nav {
+    grid-template-rows: repeat(3, auto);
+    grid-template-columns: none;
+    grid-row-gap: 20px;
+
+    padding: 30px 0 30px;
+    background: rgba(40, 44, 47, 0.2);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+  }
+
+  .Burger {
+    display: inline;
+  }
+}
+
+.NavAnimation-enter {
+  opacity: 0;
+  transform: scale(0.5);
+}
+
+.NavAnimation-enter-active {
+  opacity: 1;
+  transform: translateX(0);
+  transition: opacity 350ms, tranform 350ms;
+}
+
+.NavAnimation-exit {
+  opacity: 1;
+}
+
+.NavAnimation-exit-active {
+  opacity: 0;
+  transform: scale(0.5);
+  transition: opacity 350ms, transform 350ms;
 }
