@@ -79,7 +79,7 @@ body {
 .Nav {
   display: grid;
   grid-area: nav;
-  grid-template-columns: repeat(3, auto);
+  grid-template-columns: repeat(4, auto);
   align-items: center;
   justify-items: center;
 }
@@ -103,8 +103,8 @@ body {
   font-size: 20px;
   color: #fff;
   font-weight: 600;
-  background-color: rgba(255, 0, 0, 0.25);
-  box-shadow: 0px 5px 0px 0px rgba(255, 0, 0, 0.25);
+  background-color: rgba(66, 121, 3, 0.25);
+  box-shadow: 0px 5px 0px 0px rgba(66, 121, 3, 0.25);
   border-radius: 10px;
   cursor: pointer;
   transition: 70ms;
@@ -112,7 +112,7 @@ body {
 
 .Nav button:active {
   transform: translateY(3px);
-  box-shadow: 0px 2px 0px rgba(255, 0, 0, 0.25);
+  box-shadow: 0px 2px 0px rgba(66, 121, 3, 0.25);
 }
 
 .square {
@@ -157,9 +157,9 @@ body {
   margin-left: 20px;
 }
 
-.Burger {
+.Cat {
   display: none;
-  grid-area: burger;
+  grid-area: cat;
   margin: 0 20px 0 0;
   padding: 0;
   justify-self: end;
@@ -169,17 +169,17 @@ body {
   outline: none;
   transition: 0.1s;
 }
-.Burger:active {
+.Cat:active {
   transform: scale(1.2);
 }
 
 @media (max-width: 700px) {
   .Header {
-    grid-template-areas: "logo burger" "nav nav";
+    grid-template-areas: "logo cat" "nav nav";
   }
 
   .Nav {
-    grid-template-rows: repeat(3, auto);
+    grid-template-rows: repeat(4, auto);
     grid-template-columns: none;
     grid-row-gap: 20px;
 
@@ -190,7 +190,7 @@ body {
     border-bottom-right-radius: 10px;
   }
 
-  .Burger {
+  .Cat {
     display: inline;
   }
 }
